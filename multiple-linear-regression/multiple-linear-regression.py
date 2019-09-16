@@ -9,8 +9,8 @@ Y = dataset.iloc[ : ,  4 ].values
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 ct = ColumnTransformer(
-    [('one_hot_encoder', OneHotEncoder(), [3])],    # The column numbers to be transformed (here is [0] but can be [0, 1, 3])
-    remainder='passthrough'                         # Leave the rest of the columns untouched
+    [('one_hot_encoder', OneHotEncoder(), [3])],    
+    remainder='passthrough'                        
 )
 
 X = np.array(ct.fit_transform(X), dtype=np.float)
